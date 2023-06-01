@@ -9,6 +9,7 @@ dotenv.config();
 // Configure OpenAI API
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
+
 });
 const openai = new OpenAIApi(configuration);
 
@@ -21,7 +22,7 @@ const rl = readline.createInterface({
 // Function to handle user input and API calls
 async function chatWithGPT3(prompt, chatHistory) {
   const completion = await openai.createCompletion({
-    model: "text-davinci-003",
+    model: "gpt4",
     prompt: chatHistory + "\nYou: " + prompt + "\nGPT-3: ",
     max_tokens: 150,
   });
