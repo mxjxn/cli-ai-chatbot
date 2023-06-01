@@ -30,6 +30,7 @@ async function chatWithGPT3(prompt, chatHistory) {
 }
 
 // Main chat loop
+//
 function chatLoop(chatHistory = "") {
   rl.question("You: ", async (input) => {
     if (input.toLowerCase() === "exit") {
@@ -47,4 +48,6 @@ function chatLoop(chatHistory = "") {
 
 // Start chat loop
 console.log("Type 'exit' to end the conversation. Type 'clear' to clear chat history.");
+
+process.stdout.write("\u001b[2J\u001b[0;0H");
 chatLoop();
