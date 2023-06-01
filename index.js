@@ -22,9 +22,9 @@ const rl = readline.createInterface({
 // Function to handle user input and API calls
 async function chatWithGPT3(prompt, chatHistory) {
   const completion = await openai.createCompletion({
-    model: "gpt4",
-    prompt: chatHistory + "\nYou: " + prompt + "\nGPT-3: ",
-    max_tokens: 150,
+    model: "text-davinci-003",
+    prompt: chatHistory + "\nYou: " + prompt + "\nBot: ",
+    max_tokens: 888,
   });
   return completion.data.choices[0].text.trim();
 }
